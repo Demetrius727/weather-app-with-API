@@ -149,3 +149,33 @@
   #suggestions button:hover {
     opacity: 1;
   }
+
+  .recent-searches {
+    margin: 50px;
+  }
+  
+  .recent-searches h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  #recent-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; 
+  }
+  
+  
+  #recent-list li {
+    cursor: pointer;
+    color: rgb(138, 185, 216);
+    text-decoration: underline;
+    
+  }
+  
+  #recent-list li:hover {
+    color: darkblue;
+  }
+  

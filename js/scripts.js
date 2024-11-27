@@ -21,6 +21,27 @@ const loader = document.querySelector("#loader");
 const suggestionContainer = document.querySelector("#suggestions");
 const suggestionButtons = document.querySelectorAll("#suggestions button");
 
+let recentSearches = [];
+
+function updateRecentSearches(cityName) {
+    if (!recentSearches.includes(cityName)) {
+      recentSearches.push(cityName);
+  
+      const recentList = document.getElementById('recent-list');
+      const listItem = document.createElement('li');
+      listItem.innerText = cityName.toUpperCase();
+  
+      listItem.addEventListener('click', () => {   
+        cityInput.value = cityName;    
+        searchBtn.click();
+        
+      });
+  
+      recentList.appendChild(listItem);
+    }
+  }
+
+
 //Functions
 const toggleLoader = () => {
     loader.classList.toggle("hide");
@@ -69,6 +90,8 @@ const showWeatherData = async (city) => {
     windElement.innerText = `${data.wind.speed}km/h`
 
     //document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
+
+    updateRecentSearches(data.name);
 
     weatherContainer.classList.remove("hide");
 }
