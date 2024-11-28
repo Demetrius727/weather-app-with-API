@@ -23,6 +23,7 @@ const suggestionButtons = document.querySelectorAll("#suggestions button");
 
 let recentSearches = [];
 
+//Functions
 function updateRecentSearches(cityName) {
     if (!recentSearches.includes(cityName)) {
       recentSearches.push(cityName);
@@ -41,8 +42,6 @@ function updateRecentSearches(cityName) {
     }
   }
 
-
-//Functions
 const toggleLoader = () => {
     loader.classList.toggle("hide");
 };
